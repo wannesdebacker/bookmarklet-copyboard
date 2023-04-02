@@ -1,0 +1,23 @@
+:root {
+  --color-dark: #333;
+  --color-light: #fff;
+  --color-focus: #00f;
+
+  --color-focus-dark: #00a;
+
+  --transition-duration: 384ms;
+
+  --spacing-1: 1rem;
+  --spacing-2: 2rem;
+  --spacing-3: 2.5rem;
+  --spacing-4: 3.5rem;
+  --spacing-5: 4.5rem;
+  --spacing-6: 6rem;
+  --spacing-7: 8rem;
+
+  font-size: 16px;
+}
+
+$color-dark: var(--color-dark);
+$color-light: var(--color-light);
+$transition-duration: var(--transition-duration);

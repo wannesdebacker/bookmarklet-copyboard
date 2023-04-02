@@ -1,0 +1,80 @@
+.light-switch {
+  --width: 60px;
+  --height: 30px;
+
+  position: absolute;
+  z-index: 2;
+  width: var(--width);
+
+  right: 0;
+  top: 0;
+  padding: var(--spacing-2);
+}
+
+.light-switch__label {
+  display: block;
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  background-color: var(--color-dark);
+  border-radius: 15px;
+}
+
+.light-switch__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  text-indent: -1px;
+  overflow: hidden;
+}
+
+.light-switch__slider {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: var(--transition-duration);
+}
+
+.light-switch__input:checked ~ .light-switch__slider {
+  background-color: var(--color-light);
+}
+
+// Focus-visible polyfill for safari
+.light-switch__input:focus-visible ~ .light-switch__slider {
+  box-shadow: 0 0 0 2px var(--color-focus);
+}
+
+.light-switch__slider::before {
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: translateX(5px);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: inset 10px -4px 0px 0px var(--color-light);
+  background-color: var(--color-dark);
+  transition: var(--transition-duration);
+}
+
+.light-switch__input:checked ~ .light-switch__slider::before {
+  transform: translateX(calc(60px - 5px - 20px));
+  background-color: var(--color-dark);
+  box-shadow: none;
+}
+
+.light-switch__description {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
